@@ -7,6 +7,8 @@ from .logging import AccessLogColorFormatter
 
 
 class WebApp(object):
+    """ The Main web application object """
+
     def __init__(self, app_class):
         self._config = {}
         self._setup_app(app_class)
@@ -35,10 +37,10 @@ class WebApp(object):
             class_method = getattr(app_class, method_name)
             setattr(class_method, "exposed", True)
 
-    def run(self):
+    def run(self, root_path="/"):
         server_software = os.environ.get("SERVER_SOFTWARE")
         if server_software:
-            return cherrypy.Application(self._app, "/")
+            return cherrypy.Application(self._app, root_path)
         else:
             # In some platforms signals are not available
             if hasattr(cherrypy.engine, "signals"):

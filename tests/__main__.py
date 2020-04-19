@@ -2,7 +2,6 @@ from webplane import WebApp
 
 
 class MyApp:
-
     def index(self):
         return "Hello world"
 

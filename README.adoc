@@ -15,10 +15,11 @@ pip3 install --user webplane
 ```python
 from webplane import WebApp
 
-class MyWebApp(WebApp):
 
+class MyApp:
     def index(self):
-        return f'Hello from {self.path}'
+        return "Hello world"
 
-MyWebApp().run()
+
+application = WebApp(MyApp).run()
 ```
