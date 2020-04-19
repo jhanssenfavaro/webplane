@@ -1,8 +1,7 @@
-# webplane
+# WebPlane
 
 
 ## About
-
 
 
 ## Install
@@ -11,8 +10,45 @@
 pip3 install --user webplane
 ```
 
-## How to use
-```python
+## Planned Features
+* [ ] Online and Offline (static html) rendering
+* [ ] Automatic route/render from directory
+* [ ] Automatic route/python control from directory
+* [ ] Render templates using Jinja, extensions:
+** [ ] Inject headers/session/cookies API
+** [ ] Inject associated YAML sourced data
+** [ ] Inject zero-code database API
+* [ ] HTTP (functional) testing
+
+Markup rendering
+
+** [ ] markdown
+** [ ] asciidoctor
+
+CI Deployments
+
+* [ ] GitHub Pages
+* [ ] Kubernetes
+* [ ] CloudFoundry
+
+Modules
+
+* [ ] User registration & authentication
+* [ ] Peformance data logging
+
+
+
+
+### Create applications starting from templates
+[source, bash]
+----
+webplane create my_app template
+webplane run my_app
+----
+
+### Develop web applications using python
+[source, python]
+----
 from webplane import WebApp
 
 
@@ -22,4 +58,4 @@ class MyApp:
 
 
 application = WebApp(MyApp).run()
-```
+----
